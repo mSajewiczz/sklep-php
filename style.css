@@ -14,6 +14,17 @@ body {
 	background-color: #333;
 }
 
+header {
+  	background-position: center;               
+  	background-repeat: no-repeat;               
+  	background-size: cover;     
+	height: 100vh;
+	  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+	url("https://d2yvmenv39glx3.cloudfront.net/images/f-150897-jak-odbywa-sie-produkcja-palet-drewnianych.jpg");
+
+}
+
 .navbar {
 	position: fixed;
     display: flex;
@@ -41,6 +52,10 @@ body {
 	font-size: 2em;
 }
 
+.nav-username {
+	text-decoration: underline;
+}
+
 .navbar-logo {
 	text-decoration: none;
 	color: #000;
@@ -57,12 +72,23 @@ body {
 }
 
 .main-view {
-    margin-top: 2em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: #fff;
+	gap: 10px;
+    /* margin-top: 2em; */
     padding: 0 2em;
 }
 
+.main-view h2 {
+	font-weight: normal;
+	font-size: 20px;
+}
+
 .main-view h1 {
-    font-size: 3em;
+    font-size: 35px;
     color: #fff;
     font-weight: normal;
 }
@@ -88,13 +114,30 @@ body {
 	height: calc(100vh - 6em); 
 }
 
+.login-form h1 {
+	font-size: 25px;	
+}
+
 .login-form, .signup-form {
 	display: flex;
-	justify-content: center;
-	align-items: start;
+	flex-direction: column;
+	padding: 10px 20px;
+	gap: 20px;
+	
+	justify-content: start;
+	align-items: center;
 	width: 30em;
-	height: 45em;
+	/* height: 45em; */
 	background-color: #fff;
+}
+
+.form-info {
+	font-size: 15px;
+}
+
+.form-info a {
+	text-decoration: none;
+	color: red;
 }
 
 .products-header, .contact-header {
@@ -106,5 +149,294 @@ body {
 
 .products-header p, .contact-header p {
 	font-size: 2rem;
+	color: #fff;
+}
+
+.login-formular {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.login-formular button {
+	font-size: 15px;
+}
+
+.login-formular label {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	font-size: 15px;
+}
+
+.login-formular label input {
+	padding:5px;
+}
+
+
+
+.xd {
+	display: flex;
+	gap: 5px;
+}
+.admin {
+	color: red;
+}
+
+.admin-panel-button {
+	padding: 5px 10px;
+	text-decoration: none;
+	background-color: red;
+	color: #fff;
+}
+
+.logout-button {
+	padding: 5px 10px;
+	border: none;
+	background: none;
+	background-color: red;
+}
+
+.logout-button a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.products {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.products-list {
+	display: flex;
+	flex-direction:row;
+	flex-wrap: wrap;
+	gap: 10px;
+	justify-content: center;
+	align-items: center;
+}
+
+.product-title {
+	color: red;
+	font-size: 25px;
+}
+
+.product-desc {
+	font-size: 20px;
+	color: green;
+}
+
+.product-cuantity-p {
+	font-size: 20px;
+}
+
+.product-price {
+	font-size: 20px;
+	color: blue;
+}
+
+.product-rating {
+	font-size: 20px;
+	color: orange;
+}
+
+.product {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: 10px;
+	padding: 10px 20px;
+	width: 25%;
+	background-color: white;
+	border: 1px solid black;
+}
+
+.product-cuantity {
+	width: 40px;
+}
+
+.product-img {
+	height: 200px;
+
+}
+
+.stars-box {
+	display: flex;
+}
+
+.admin-panel-header, .admin-panel-add-users, .admin-panel-add-product {
+	padding: 10px 20px;
+	width: 45%;
+	background-color: #fff;
+	border-radius: 15px;
+	font-size:  15px;
+}
+
+.main-admin-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.admin {
+	color: red;
+}
+
+.admin-container {
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	align-items: start;
+}
+
+.admin-container-box {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 20px;
+	font-size: 15px;
+	background-color: white;
+	height: 295px;
+	overflow: auto;
+}
+
+
+.cart-box {
+	padding: 10px;
+}
+
+.user-username {
+	width: 20%;
+}
+
+.user-buttons {
+	display: flex;
+	gap: 10px;
+}
+
+
+.product-buttons {
+	display: flex;
+	gap: 10px;
+}
+
+.admin-panel-product {
+	display: flex;
+	padding: 5px 10px;
+	flex-direction: column;
+	border: 1px solid black;
+}
+
+.user-buttons button, .product-buttons button {
+	padding: 2px;
+	color: #fff;
+	background: none;
+	border: none;
+	background-color: red;
+	cursor: pointer;
+}
+
+.admin-panel-user {
+	display: flex;
+	padding: 5px 10px;
+	border: 1px solid black;
+	gap: 10px;
+}
+
+.cart-box {
+    width: 90%;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.cart-box-title {
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #444;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.cart-table th, .cart-table td {
+    padding: 10px;
+    text-align: center;
+	    font-size: 15px;
+    border-bottom: 1px solid #666;
+}
+
+.cart-table th {
+    background-color: #333;
+	    font-size: 15px;
+    font-weight: bold;
+}
+
+.cart-table tr:hover {
+    background-color: #555;
+}
+
+.cart-product-img {
+    width: 80px;
+    border-radius: 5px;
+}
+
+.cart-sum {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.cart-sum-text {
+    font-size: 20px;
+    color: #fff;
+}
+
+.cart-buy-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cart-buy-btn:hover {
+    background-color: darkgreen;
+}
+
+.cart-delete-product {
+	padding: 5px;
+	border: none;
+	background-color: white;
+	cursor: pointer;
+	transition: all .3s;
+}
+
+.cart-delete-product:hover {
+	background-color: rgb(179, 177, 177);
+}
+
+.text-editor {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: start;
+	gap: 10px;
+	padding: 10px;
+}
+
+.text-editor h2 {
+	font-size: 20px;
 	color: #fff;
 }
