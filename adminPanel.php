@@ -59,7 +59,7 @@
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=5g5faf78gvk6yfq9bd3bbfjo858kjx1q8o0nbiwtygo2e4er"></script>
     <script>
         tinymce.init({
-            selector: '#editor',
+            selector: '#editor',    
             height: 300,
             menubar: true,
             plugins: 'advlist autolink lists link image charmap print preview anchor ' +
@@ -131,11 +131,71 @@
             </div>
         </div>
 
+        <?php 
+            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['addProductViaForm'])) {
+                        require("connection.php");
+
+
+                        $title = $_POST['productTitle'];
+                        $description = $_POST['productDescription'];
+                        $price = $_POST['productPrice'];
+                        $img = $_POST['productImg'];
+                        $rating = $_POST['productRating'];
+
+                
+                        $stmt = $conn->prepare("INSERT INTO products (Title, Description, Price, Img, Rating) VALUES (?, ?, ?, ?, ?)");
+                        if (!$stmt) {
+                        die('Błąd przygotowania zapytania: ' . $conn->error);
+                        }
+
+                        $stmt->bind_param("ssis", $title, $description, $price, $img, $rating);
+                        $result = $stmt->execute();
+
+                        if ($result) {
+                        echo "Produkt został dodany pomyślnie.";
+                        // Możesz dodać przekierowanie np. header("Location: products_list.php");
+                        } else {
+                        echo "Błąd podczas dodawania produktu: " . $stmt->error;
+                        }
+
+                        $stmt->close();
+                        $conn->close();
+                        }
+        ?>
+
         <div class="text-editor">
             <h2>Dodaj nowy produkt</h2>
-            <textarea id="editor" name="editor"></textarea>
+            <form method = "POST" action="" class="adminAddProductForm">
 
-            <button>Dodaj produkt</button>
+                <label for="">
+                    <p>Tytuł produktu</p>
+                    <input type="text" name="productTitle">
+                </label>
+
+                <label for="">
+                    <p>Opis produktu</p>
+                    <textarea id="editor" name="productDescription"></textarea>
+                </label>
+
+                <label for="">
+                    <p>Ocena produktu</p>
+                    <input type="text" name="productRating">
+                </label>
+
+                <label for="">
+                    <p>Cena produktu</p>
+                    <input type="text" name="productPrice">
+                </label>
+                
+                <label for="">
+                    <p>Zdjęcie produktu</p>
+                    <input type="text" name="productImg">
+                </label>
+
+
+                <button type="submit" name="addProductViaForm" class="addProductViaForm">Dodaj produkt</button>
+            </form>
+            
         </div>
 
         

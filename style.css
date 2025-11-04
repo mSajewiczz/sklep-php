@@ -440,3 +440,31 @@ header {
 	font-size: 20px;
 	color: #fff;
 }
+
+.adminAddProductForm {
+	display: flex;
+	width: 100%;
+	padding: 10px;
+	gap: 20px;
+	flex-direction: column;
+}
+
+.adminAddProductForm label {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	font-size: 20px;
+	color: white;
+}
+
+.adminAddProductForm label input {
+	font-size: 15px;
+	width: 300px;
+}
+
+.addProductViaForm {
+	font-size: 15px;
+	width: 300px;
+	background-color: red;
+	color: #fff;
+}
