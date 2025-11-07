@@ -5,20 +5,51 @@ if (session_status() === PHP_SESSION_NONE) {
 require("connection.php");
 
 $message = "";
+    function systemLog($userName) {
+        require("connection.php");
+        $query = "INSERT INTO `log`(`message`) VALUES (?)";
+    
+        $ipAddress = $_SERVER['REMOTE_ADDR'];
+        $messageLog = "Tried to log in. IP: $ipAddress. User: $userName";
+
+        // fwrite(log.txt, );
+
+$data = fopen("log.txt", "w");
+
+echo fwrite($data, $messageLog);
+
+fclose($data);
+
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s", $messageLog);
+
+        if (!$stmt){
+            die('Błąd przygotowania zapytania: ' . $conn->error);
+        }
+
+        if ($stmt->execute()) {
+        echo "";
+        } else {
+        echo "Błąd: " . $stmt->error;
+        }
+
+        $stmt->close();
+        $conn->close();
+    }   
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['user_password'];
     
-
     $query = "SELECT Username, User_password, isAdmin FROM users WHERE Username = '$username'";
     
     $result = mysqli_query($conn, $query);
 
+    systemLog($username);
+
     if ($result) {
             $row = mysqli_fetch_assoc($result);
 
-            
             $hashedPassword = $row['User_password'];
 
             echo $hashedPassword;
@@ -63,7 +94,7 @@ mysqli_close($conn);
     <?php include("navbar.php")?>
     <div class="bgc">
 
-        <div class="login-form">
+        <div class="logina-form">
             <h1>Logownaie</h1>
 
             <form method="post" action="" class="login-formular">

@@ -3,8 +3,10 @@
 -[x] Wyświetlanie produktów
 -[x] Zalogowanie jako admin
 -[x] Rating
--[ ] szyfrowanie haseł
+-[x] szyfrowanie haseł
 -[x] koszyk
 -[ ] admin panel 
-    -[ ] dodawanie/usuwanie produktow 
-    -[ ] dodawanie/usuwanie/zmiana statusu uzytkownika
+    -[x] dodawanie/usuwanie produktow 
+    -[x] zmiana statusu uzytkownika
+    -[ ] edycja produktów
+    -[ ] logi systemowe

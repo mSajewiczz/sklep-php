@@ -34,6 +34,7 @@ header {
 	width: 100vw;
     height: 6em;
 	background-color: #fff;
+	z-index: 1000 !important;
 }
 
 .navbar ul {
@@ -261,6 +262,8 @@ header {
 
 }
 
+
+
 .stars-box {
 	display: flex;
 }
@@ -340,10 +343,13 @@ header {
 
 .admin-panel-user {
 	display: flex;
+	justify-content: space-between;
+	gap: 30px;
 	padding: 5px 10px;
 	border: 1px solid black;
-	gap: 10px;
 }
+
+
 
 .cart-box {
     width: 90%;
@@ -430,8 +436,9 @@ header {
 .text-editor {
 	display: flex;
 	flex-direction: column;
-	align-items: start;
+	align-items: center;
 	justify-content: start;
+	width: 100%;
 	gap: 10px;
 	padding: 10px;
 }
@@ -468,3 +475,61 @@ header {
 	background-color: red;
 	color: #fff;
 }
+
+
+.product p {
+	font-size: 20px;
+	color: green;	
+}
+
+.adminAddProductForm {
+display: flex;
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  /* max-width: 500px; */
+  width: 965px;
+}
+
+.adminAddProductForm label {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.adminAddProductForm p {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Input and textarea styles */
+.adminAddProductForm input[type="text"],
+.adminAddProductForm input[type="number"],
+.adminAddProductForm input[type="file"],
+.adminAddProductForm textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.adminAddProductForm textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.addProductViaForm {
+  background: red;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 18px;
+  width: 100%;
+  cursor: pointer;
+}
+

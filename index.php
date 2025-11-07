@@ -132,9 +132,9 @@ if (!empty($products)) {
         echo "</div>";
     
         
-        echo "<p class='product-price'>Cena: " . number_format( htmlspecialchars($product['Price']), 2,",",".") . " zł</p>";
-        echo "<p class='product-desc'>" . htmlspecialchars($product['Description']) . "</p>";
-        echo "<p class = 'product-cuantity-p'>Ilość</p>";
+        echo "<div class='product-price'>Cena: " . number_format( htmlspecialchars($product['Price']), 2,",",".") . " zł</div>";
+        echo "<p class='product-desc'>" . ($product['Description']) . "</p>";
+        echo "<div class = 'product-cuantity-p'>Ilość</div>";
         echo "<input type='number' name='cartInput' value=1 class='product-cuantity' />";
         echo "<button type='submit' name='cartButton' class='add-to-cart'>Dodaj do koszyka</button>";
         echo "</form>";

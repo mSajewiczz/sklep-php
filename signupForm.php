@@ -2,10 +2,39 @@
     require("connection.php");
     $message = "";
 
+
+        function systemLog($userName) {
+        require("connection.php");
+        $query = "INSERT INTO `log`(`message`) VALUES (?)";
+    
+        $ipAddress = $_SERVER['REMOTE_ADDR'];
+        $messageLog = "Tried to sign up. IP: $ipAdress. User: $userName";
+
+        // $stmt = mysqli_prepare($conn, $query);
+
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s", $messageLog);
+
+        if (!$stmt){
+            die('Błąd przygotowania zapytania: ' . $conn->error);
+        }
+
+        if ($stmt->execute()) {
+        echo "";
+        } else {
+        echo "Błąd: " . $stmt->error;
+        }
+
+        $stmt->close();
+        $conn->close();
+    }   
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         $username = $_POST['username'];
         $password = $_POST['user_password'];
+
+        systemLog($username);
 
         // $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
